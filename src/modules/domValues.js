@@ -16,6 +16,11 @@ const displayController = (function () {
   };
 
   const makeDisplayBoxDiv = function () {
+    const existingDisplayBox = document.querySelector('.display-box');
+    if (existingDisplayBox) {
+        existingDisplayBox.remove();
+    }
+    
     const newDisplayDiv = document.createElement("div");
     newDisplayDiv.classList.add("display-box");
 
