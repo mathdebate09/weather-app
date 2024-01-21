@@ -3,7 +3,7 @@ import displayController from "./domValues.js";
 async function getData(locationQuery) {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=1cfa627e1c6c4a79ba8152845241901&q=${locationQuery}&aqi=yes`,
+      `https://api.weatherapi.com/v1/current.json?key=1cfa627e1c6c4a79ba8152845241901&q=${locationQuery}&aqi=yes`,
       { mode: "cors" },
     );
     const weatherObj = await response.json();
