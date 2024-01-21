@@ -15,8 +15,8 @@ const displayController = (function () {
     });
   };
 
-  const getGIF = async function(imgQuery) {
-    const existingGif = document.querySelector('.weather-gif');
+  const getGIF = async function (imgQuery) {
+    const existingGif = document.querySelector(".weather-gif");
     if (existingGif) {
       existingGif.remove();
     }
@@ -24,28 +24,28 @@ const displayController = (function () {
     queryImg.classList.add("weather-gif");
     const response = await fetch(
       `https://api.giphy.com/v1/gifs/translate?api_key=BScIFBp8kiIbOXET42xkEbJbwnVrjbJF&s=weather-is-${imgQuery}`,
-      { mode: "cors" }
+      { mode: "cors" },
     );
     const imgData = await response.json();
     queryImg.src = imgData.data.images.original.url;
 
-    const newParentDisplayDiv = document.querySelector('.parent-box'); 
+    const newParentDisplayDiv = document.querySelector(".parent-box");
     newParentDisplayDiv.appendChild(queryImg);
-  }
+  };
 
   const makeDisplayBoxDiv = function () {
-    const existingDisplayBox = document.querySelector('.display-box');
+    const existingDisplayBox = document.querySelector(".display-box");
     if (existingDisplayBox) {
-        existingDisplayBox.remove();
+      existingDisplayBox.remove();
     }
 
-    const existingParentDisplayDiv = document.querySelector('.parent-box');
+    const existingParentDisplayDiv = document.querySelector(".parent-box");
     if (existingParentDisplayDiv) {
       existingParentDisplayDiv.remove();
     }
-    
+
     const newParentDisplayDiv = document.createElement("div");
-    newParentDisplayDiv.classList.add('parent-box');
+    newParentDisplayDiv.classList.add("parent-box");
 
     const newDisplayDiv = document.createElement("div");
     newDisplayDiv.classList.add("display-box");
@@ -113,7 +113,7 @@ const displayController = (function () {
     appendWindSpeed,
     appendHumidity,
     submitListner,
-    getGIF
+    getGIF,
   };
 })();
 
