@@ -1,6 +1,6 @@
 # project-name
 
-> [Live Website](https://mathdebate09.github.io/propject-name/)
+> [Live Website](https://mathdebate09.github.io/weather-app/)
 
 ## Preview
 
@@ -12,8 +12,8 @@
 ## Getting Started
 
 ```
-$ git clone git@github.com:mathdebate09/project-name.git
-$ cd propject-name
+$ git clone git@github.com:mathdebate09/weather-app.git
+$ cd weather-app
 $ npm run build
 $ npm start
 ```

@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mathdebate09/project-name.git"
+    "url": "https://github.com/mathdebate09/weather-app.git"
   },
   "author": "learn.jayssingh@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mathdebate09/project-name/issues"
+    "url": "https://github.com/mathdebate09/weather-app/issues"
   },
-  "homepage": "https://github.com/mathdebate09/project-name#readme",
+  "homepage": "https://github.com/mathdebate09/weather-app#readme",
   "devDependencies": {
     "css-loader": "^6.9.0",
     "css-minimizer-webpack-plugin": "^5.0.1",

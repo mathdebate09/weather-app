@@ -1,7 +1,7 @@
 /* FONT FACES */
 @font-face {
   font-family: LF-Normal;
-  src: url("../assets/fonts/LibreFranklin-Bold.ttf");
+  src: url("../assets/fonts/LibreFranklin-Medium.ttf");
 }
 
 @font-face {
@@ -9,10 +9,19 @@
   src: url("../assets/fonts/LibreFranklin-Bold.ttf");
 }
 
+@font-face {
+  font-family: Logo-Font;
+  src: url("../assets/fonts/FredokaOne-Regular.ttf");
+}
+
 /* ROOT */
 :root {
   --normal: "LF-Normal", sans-serif;
   --bold: "LF-Bold", sans-serif;
+  --bg: #dce1de;
+  --header: #49a078;
+  --text: #216956;
+  --display-box: #9cc5a1;
 }
 
 /* GLOBAL STYLES */
@@ -29,13 +38,89 @@ body {
   padding: 0;
 }
 
+/* PARENT-CONTAINER */
+.container {
+  display:grid;
+  grid-template-rows: 150px 1fr 50px;
+  height:100%;
+}
+
+/* Header */
+.header {
+  place-self: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100%;
+  gap:16px;
+  background-color: var(--header);
+}
+
+.logo-text {
+  font-size: 68px;
+  white-space: nowrap;
+  font-family:'Logo-Font', sans-serif;
+  color:var(--bg);
+}
+
+.logo-img {
+  width:110px;
+}
+
+/* DISPLAY */
+.display {
+  width:100%;
+  height:100%;
+  background-color:var(--bg);
+  display:grid;
+  grid-template-rows: auto auto;
+  place-items:center;
+  align-content:start;
+}
+
+form {
+  padding-top:16px;
+  padding-bottom:16px;
+  font-family: var(--normal);
+}
+
+input {
+  height:42px;
+  width:600px;
+  padding-left:8px;
+  border-radius: 6px;
+  font-size:22px;
+  margin-right: 10px;
+  background-color:#DDE6DE;
+  border: 2px solid var(--text);
+}
+
+input:focus {
+  outline:none;
+  background-color:#D6E2D9;
+}
+
+button {
+  all:unset;
+  width:96px;
+  font-size:22px;
+  height:44px;
+  border-radius: 6px;
+  text-align:center;
+  background-color:var(--text);
+  color:var(--bg);
+  font-family: var(--bold);
+  cursor:pointer;
+}
+
 /* FOOTER */
 .footer {
   font-family: var(--normal);
   font-size: 24px;
   height: 100%;
   width: 100%;
-  background-color: var(--footer);
+  background-color: #C4DACD;
   color: #333333;
   display: grid;
   place-items: center;
