@@ -26,6 +26,7 @@ async function getData(locationQuery) {
       weatherObj.current.wind_dir,
     );
     displayController.appendHumidity(weatherObj.current.humidity);
+    displayController.getGIF(weatherObj.current.condition.text);
   } catch (err) {
     throw err;
   }

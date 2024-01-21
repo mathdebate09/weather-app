@@ -5,6 +5,8 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./src/index.js",
+    apiLogic: "./src/modules/apiLogic.js",
+    domValues: "./src/modules/domValues.js",
   },
   devtool: "inline-source-map",
   devServer: {

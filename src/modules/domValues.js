@@ -15,17 +15,44 @@ const displayController = (function () {
     });
   };
 
+  const getGIF = async function(imgQuery) {
+    const existingGif = document.querySelector('.weather-gif');
+    if (existingGif) {
+      existingGif.remove();
+    }
+    const queryImg = document.createElement("img");
+    queryImg.classList.add("weather-gif");
+    const response = await fetch(
+      `https://api.giphy.com/v1/gifs/translate?api_key=BScIFBp8kiIbOXET42xkEbJbwnVrjbJF&s=weather-is-${imgQuery}`,
+      { mode: "cors" }
+    );
+    const imgData = await response.json();
+    queryImg.src = imgData.data.images.original.url;
+
+    const newParentDisplayDiv = document.querySelector('.parent-box'); 
+    newParentDisplayDiv.appendChild(queryImg);
+  }
+
   const makeDisplayBoxDiv = function () {
     const existingDisplayBox = document.querySelector('.display-box');
     if (existingDisplayBox) {
         existingDisplayBox.remove();
     }
+
+    const existingParentDisplayDiv = document.querySelector('.parent-box');
+    if (existingParentDisplayDiv) {
+      existingParentDisplayDiv.remove();
+    }
     
+    const newParentDisplayDiv = document.createElement("div");
+    newParentDisplayDiv.classList.add('parent-box');
+
     const newDisplayDiv = document.createElement("div");
     newDisplayDiv.classList.add("display-box");
+    newParentDisplayDiv.appendChild(newDisplayDiv);
 
     const displayDiv = document.querySelector(".display");
-    displayDiv.appendChild(newDisplayDiv);
+    displayDiv.appendChild(newParentDisplayDiv);
   };
 
   const appendLocation = function (countryName, cityName) {
@@ -86,6 +113,7 @@ const displayController = (function () {
     appendWindSpeed,
     appendHumidity,
     submitListner,
+    getGIF
   };
 })();
 
